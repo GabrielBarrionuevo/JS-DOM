@@ -66,46 +66,17 @@ while (opcion1 != 8) {
     8- No comprar nada.
     `)
     
-    switch (opcion1) {
-        case "1":
-            compraPapitas(Number(listaPapitas[0].precio), listaPapitas[0].nombre);
-        break;
-        
-        case "2":
-            compraPapitas(Number(listaPapitas[1].precio), listaPapitas[1].nombre);    
-        break;
-
-        case "3":
-            compraPapitas(Number(listaPapitas[2].precio), listaPapitas[2].nombre);
-        break;
-
-        case "4":
-            compraPapitas(Number(listaPapitas[3].precio), listaPapitas[3].nombre);
-        break;
-
-        case "5":
-            compraPapitas(Number(listaPapitas[4].precio), listaPapitas[4].nombre);
-        break;
-
-        case "6":
-            compraPapitas(Number(listaPapitas[5].precio), listaPapitas[5].nombre);
-        break;
-
-        case "7":
-            compraPapitas(Number(listaPapitas[6].precio), listaPapitas[6].nombre);
-        break;
-
-        case "8":
-            dineroUsuario = dineroUsuario;
-            alert(`Su dinero es de $${dineroUsuario}. Adios!`); 
-        continue;
-
-        default:
-            alert(`Ingrese un número válido.`); 
-        break;
+    if (opcion1 <= 7) {
+        compraPapitas(Number(listaPapitas[opcion1 -1].precio), listaPapitas[opcion1 -1].nombre);
+    }    
+    else if (opcion1 = 8) {
+        dineroUsuario = dineroUsuario;
+        alert(`Su dinero es de $${dineroUsuario}. Adios!`); 
     }
+    else {
+        alert(`Ingrese un número válido.`);
+    };
 }
-
 // BUSCAR POR NOMBRE //
 ////////////////
 ////////////////
@@ -143,47 +114,18 @@ while (opcion2 != 8) {
     8- Finalizar compra.
     `)
 
-    switch (opcion2) {
-        case "1":
-            listaCarrito.push(listaPapitas[0]);
-            break;
-
-            case "2":
-            listaCarrito.push(listaPapitas[1]);
-            break;
-
-            case "3":
-            listaCarrito.push(listaPapitas[2]);
-            break;
-
-            case "4":
-            listaCarrito.push(listaPapitas[3]);
-            break;
-
-            case "5":
-            listaCarrito.push(listaPapitas[4]);
-            break;
-
-            case "6":
-            listaCarrito.push(listaPapitas[5]);
-            break;
-
-            case "7":
-            listaCarrito.push(listaPapitas[6]);
-            break;
-
-            case "8":
-            alert(`Su carrito es: $${listaCarrito}. Adios!`); 
-            continue;
-            default:
-
-            alert(`Ingrese un número válido.`); 
-            break;
+    if (opcion2 <= 7) {
+        listaCarrito.push(listaPapitas[opcion2 - 1]);
+    }    
+    else if (opcion2 = 8) {
+        alert(`Su carrito es: $${listaCarrito}. Adios!`);
     }
+    else {
+        alert(`Ingrese un número válido.`);
+    };
 }
 console.log(listaCarrito);
 
-// DEBO ENCONTRAR LA FORMA DE AUTOMATIZAR EL SWITCH. NO PUEDO MODIFICAR ESO POR CADA NUEVO PRODUCTO. NI HACER 100 LINEAS A MANO POR 100 PRODUCTOS. //
 
 ///////////////////
 // DOM
